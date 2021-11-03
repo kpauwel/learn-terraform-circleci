@@ -6,6 +6,11 @@ terraform {
     }
   }
   required_version = "> 0.14"
+  backend "s3" {
+    bucket = "noteworth-terraform-backend"
+    key = "noteworth-terraform-backend/global/s3/terraform.tfstate"
+    region = "us-east-1"
+  }
 }
 
 provider "aws" {
